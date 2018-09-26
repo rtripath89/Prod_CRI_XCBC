@@ -1,0 +1,26 @@
+---
+
+#   - name: fix broken wwmkchroot file
+#     lineinfile: 
+#       dest: /usr/libexec/warewulf/wwmkchroot/centos-7.tmpl 
+#       regexp: "^YUM_MIRROR(.*)7.2.1511(.*)"
+#       line: 'YUM_MIRROR\g<1>7\g<2>'   # use \g<1> for backref followed by digit!
+#       backrefs: yes
+#
+
+   - name: import bootstrap image
+     shell: wwsh bootstrap import {{ compute_images_loc }}/{{ build_kernel_ver }}.wwbs
+
+   - name: import the vnfs 
+     command: wwsh vnfs import -y {{ compute_images_loc }}/centos7-compute.vnfs
+
+   - name: set up provisioning interface
+     lineinfile: line="GATEWAYDEV={{ private_interface }}" dest=/tmp/network.ww create=yes
+#" for vim
+#
+   - name: add network file to import
+     command: wwsh -y file import /tmp/network.ww --name network
+
+   - name: set network file path
+     command: wwsh -y file set network --path /etc/sysconfig/network --mode=0644 --uid=0
+

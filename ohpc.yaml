@@ -4,6 +4,6 @@
     - pre_ohpc
     - ohpc_install
     - ohpc_config
-    - compute_build_vnfs
+    - compute_import_vnfs
     - compute_build_nodes
     - nodes_vivify
