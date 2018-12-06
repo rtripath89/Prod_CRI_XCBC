@@ -2,6 +2,14 @@
 - name: Get OpenHPC repo
   yum: name={{ openhpc_release_rpm }} state=present update_cache=true
 
+- name: Pin OpenHPC repo to 1.3.5 release
+  copy:
+    src: OpenHPC.repo
+    dest: /etc/yum.repos.d/OpenHPC.repo
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Install dependencies-nfs-utils, ohpc packages, ntp and other required tools.
   yum: name={{ item }} state=installed update_cache=true
   with_items:
