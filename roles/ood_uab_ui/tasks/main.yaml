@@ -1,0 +1,12 @@
+---
+- name: Copy the configure file for apps
+  template:
+    src: "{{ app_name }}/env_local.j2"
+    dest: "/var/www/ood/apps/sys/{{ app_name }}/.env.local"
+  vars:
+    app_name: "{{ item }}"
+  with_items:
+    - dashboard
+    - activejobs
+    - myjobs
+
