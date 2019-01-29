@@ -27,3 +27,17 @@
     replace: '\1cheaha-logo.png\2'
     backup: yes
   when: cheaha_logo.stdout == ""
+
+- name: Rebuild assets for apps and force apps to restart
+  shell: |
+    scl enable git19 rh-ruby22 nodejs010 -- bin/rake assets:clobber RAILS_ENV=production
+    scl enable git19 rh-ruby22 nodejs010 -- bin/rake assets:precompile RAILS_ENV=production
+    touch tmp/restart.txt
+  args:
+    chdir: "/var/www/ood/apps/sys/{{ app_name }}"
+  vars:
+    app_name: "{{ item }}"
+  with_items:
+    - dashboard
+    - activejobs
+    - myjobs
