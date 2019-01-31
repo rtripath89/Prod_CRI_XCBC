@@ -12,11 +12,6 @@
     dest: /opt/rh/httpd24/root/etc/httpd/conf.d/
     remote_src: yes
 
-- name: enable shibd on boot
-  service:
-    name: shibd
-    enabled: yes
-
 # this loads a stock shibboleth config that will work with rpm-provided
 # shibboleth credentials against the samltest.id
 # must use the SP target host name testshib.dev.rc.uab.edu for ood node
@@ -51,10 +46,11 @@
   command: /opt/ood/ood-portal-generator/sbin/update_ood_portal
   ignore_errors: yes
 
-- name: start shibd
+- name: start shibd and enable on boot
   service:
     name: shibd
     state: started
+    enabled: yes
 
 - name: Restart service httpd, in all cases
   service:
