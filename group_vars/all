@@ -127,3 +127,7 @@
 
 #UAB UI customize
   navbar_inverse_bg: "rgb(0,99,65)"
+  project_path: "/data/project"
+  scratch_path: "/data/scratch"
+  user_data_path: "/data/user"
+
