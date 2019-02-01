@@ -130,4 +130,5 @@
   project_path: "/data/project"
   scratch_path: "/data/scratch"
   user_data_path: "/data/user"
+  local_scratch_path: "/scratch"
 
