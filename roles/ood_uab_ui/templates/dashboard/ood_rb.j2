@@ -11,11 +11,7 @@ OodFilesApp.candidate_favorite_paths.tap do |paths|
   # add user data directories
   paths << Pathname.new("{{ user_data_path }}/#{User.new.name}")
 
-  # add local scratch directory
-  paths << Pathname.new("{{ local_scratch_path }}/#{User.new.name}")
-
 end
-
 
 # don't show develop dropdown unless you are setup for app sharing
 #NavConfig.show_develop_dropdown = ENV['OOD_APP_SHARING'].present? && UsrRouter.base_path.directory?
