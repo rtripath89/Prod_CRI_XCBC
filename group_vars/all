@@ -113,7 +113,7 @@
   easybuild_sourcepath: "/tmp/source"
 
 #Rstudio related
-  rstudio_provision: false
+  rstudio_provision: true
   singularity_ver: '2.4.2'
   r_versions:
     - { full: '3.5.2', short: '3.5' }
@@ -126,7 +126,7 @@
     - { repo_name: "atlurie/shibboleth-3.0-ood", host: ["{{ ood_nodename }}"] }
 
 # Shibboleth SSO
-  enable_shib: false
+  enable_shib: true
 
 #UAB UI customize
   navbar_inverse_bg: "rgb(0,99,65)"
