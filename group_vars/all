@@ -116,8 +116,8 @@
   rstudio_provision: false
   singularity_ver: '2.4.2'
   r_versions:
-    - { full: '3.5.1', short: '3.5' }
-    - { full: '3.4.4', short: '3.4' }
+    - { full: '3.5.2', short: '3.5' }
+    - { full: '3.4.3', short: '3.4' }
 
 #Copr Repos
   enable_copr: true
@@ -127,4 +127,11 @@
 
 # Shibboleth SSO
   enable_shib: false
+
+#UAB UI customize
+  navbar_inverse_bg: "rgb(0,99,65)"
+  project_path: "/data/project"
+  scratch_path: "/data/scratch"
+  user_data_path: "/data/user"
+  local_scratch_path: "/scratch"
 
