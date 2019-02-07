@@ -38,7 +38,7 @@ attributes:
     label: Environment Setup
     value: |
       # Load required modules
-      module load Anaconda3
+      module load Anaconda3/5.2.0
 
   # Whether Conda extensions will be available within the Jupyter notebook
   # server
