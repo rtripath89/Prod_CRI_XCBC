@@ -6,7 +6,7 @@ module use {{ easybuild_prefix }}/modules/all
 #
 # Start Jupyter Notebook Server
 #
-module load Anaconda3
+module load Anaconda3/5.3.0
 unset XDG_RUNTIME_DIR
 # Launch the Jupyter Notebook Server
 jupyter notebook --config="${CONFIG_FILE}"
