@@ -46,3 +46,8 @@
     - dashboard
     - activejobs
     - myjobs
+
+- name: Put motd in place
+  copy:
+    src: motd
+    dest: /etc/ood/motd
