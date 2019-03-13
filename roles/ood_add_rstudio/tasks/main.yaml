@@ -16,9 +16,8 @@
     src: submit.yml
     dest: /var/www/ood/apps/sys/bc_rstudio_server/submit.yml.erb
 
-- name: Modify script.sh.erb
-  replace:
-    path: /var/www/ood/apps/sys/bc_rstudio_server/template/script.sh.erb
-    regexp: '(module purge.*)'
-    replace: '#\1'
+- name: Replace manifest file
+  copy:
+    src: manifest.yml
+    dest: /var/www/ood/apps/sys/bc_rstudio_server/manifest.yml
 
