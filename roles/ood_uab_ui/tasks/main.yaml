@@ -46,3 +46,8 @@
     - dashboard
     - activejobs
     - myjobs
+
+- name: Place favicon in place
+  copy:
+    src: uab_fav.ico
+    dest: /var/www/ood/public/favicon.ico
