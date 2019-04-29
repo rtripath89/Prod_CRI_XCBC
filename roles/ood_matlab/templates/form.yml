@@ -23,22 +23,14 @@ attributes:
     widget: select
     label: Partition
     options:
-      - [ "express", "express" ]
-      - [ "short", "short" ]
-      - [ "medium", "medium" ]
-      - [ "long", "long" ]
-      - [ "interactive", "interactive" ]
-      - [ "pascalnodes", "pascalnodes" ]
+      - [ "low", "low" ]
 
   version:
     widget: select
-    label: "R version"
-    help: "This defines the version of R you want to load."
+    label: "MATLAB version"
+    help: "This defines the version of MATLAB you want to load."
     options:
-      # Define functioning R version overloads using a colon after the module load statement
-{% for ver in r_versions %}
-      - [ "{{ ver.full }}", "rc/ood_rstudio/{{ ver.full }}"]
-{% endfor %}
+      - [ "R2018a", "matlab/R2018a" ]
 form:
   - version
   - bc_num_hours
