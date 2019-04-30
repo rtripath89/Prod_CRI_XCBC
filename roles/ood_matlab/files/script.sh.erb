@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-
-# Clean the environment
-
 # Set working directory to home directory
 cd "${HOME}"
 
@@ -28,7 +25,7 @@ cd "${HOME}"
 #
 
 # Load the required environment
-module load matlab/r2018a
+module load <%= context.version %>
 # Launch MATLAB
 module list
 set -x
