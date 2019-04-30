@@ -124,6 +124,17 @@
   matlab_module_appdir: "matlab"
   matlab_module_file: "r2018a"
   matlab_ver: "{{ matlab_module_file }}"
+  matlab_module_name: "rc/matlab"
+  matlab_vers:
+    - 'R2018a'
+    - 'R2017b'
+    - 'R2017a'
+    - 'R2016b'
+    - 'R2016a'
+    - 'R2015b'
+    - 'R2015a'
+    - 'R2013a'
+    - 'R2012a'
 
 #Rstudio related
   rstudio_provision: true

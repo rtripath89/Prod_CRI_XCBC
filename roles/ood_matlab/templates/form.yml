@@ -23,14 +23,22 @@ attributes:
     widget: select
     label: Partition
     options:
-      - [ "low", "low" ]
+      - [ "express", "express" ]
+      - [ "short", "short" ]
+      - [ "medium", "medium" ]
+      - [ "long", "long" ]
+      - [ "interactive", "interactive" ]
+      - [ "pascalnodes", "pascalnodes" ]
 
   version:
     widget: select
     label: "MATLAB version"
     help: "This defines the version of MATLAB you want to load."
     options:
-      - [ "R2018a", "matlab/R2018a" ]
+{% for ver in matlab_vers %}
+      - [ "{{ ver }}", "{{ matlab_module_name }}/{{ ver }}"]
+{% endfor %}
+
 form:
   - version
   - bc_num_hours
