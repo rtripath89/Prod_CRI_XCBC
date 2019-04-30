@@ -13,3 +13,14 @@
   copy:
     src: index.html
     dest: /var/www/ood/register
+
+- name: Update ood portal to serve static HTML
+  replace:
+    path: /etc/ood/config/ood_portal.yml
+    regexp: "^#?(register_root:).*$"
+    replace: "\\1 '/var/www/ood/register'"
+
+- name: Build the updated Apache config
+  command: /opt/ood/ood-portal-generator/sbin/update_ood_portal
+  ignore_errors: yes
+
