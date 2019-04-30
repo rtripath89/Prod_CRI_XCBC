@@ -1,0 +1,10 @@
+---
+- shell: ls /var/www/ood/apps/sys/dashboard/public/assets/application*.css
+  ignore_errors: yes
+  register: css_file_name
+
+- name: Copy CSS file from Dashboard App
+  copy:
+    src: "{{ css_file_name.stdout }}"
+    dest: /var/www/ood/public/application.css
+    remote_src: yes
