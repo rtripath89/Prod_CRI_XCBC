@@ -8,3 +8,8 @@
     src: "{{ css_file_name.stdout }}"
     dest: /var/www/ood/public/application.css
     remote_src: yes
+
+- name: Put static HTML file in place
+  copy:
+    src: index.html
+    dest: /var/www/ood/register
