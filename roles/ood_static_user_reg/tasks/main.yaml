@@ -9,6 +9,11 @@
     dest: /var/www/ood/public/application.css
     remote_src: yes
 
+- name: Put Cheaha logo in place
+  copy:
+    src: cheaha-logo.png
+    dest: /var/www/ood/public/logo.png
+
 - name: Put static HTML file in place
   copy:
     src: index.html
