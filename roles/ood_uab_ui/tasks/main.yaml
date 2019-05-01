@@ -9,6 +9,7 @@
     - dashboard
     - activejobs
     - myjobs
+    - shell
 
 - name: Add shared directories into files menu
   template:
