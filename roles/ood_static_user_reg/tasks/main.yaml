@@ -17,8 +17,13 @@
 - name: Update ood portal to serve static HTML
   replace:
     path: /etc/ood/config/ood_portal.yml
-    regexp: "^#?(register_root:).*$"
-    replace: "\\1 '/var/www/ood/register'"
+    regexp: '{{ item.regexp }}'
+    replace: '{{ item.replace }}'
+    backup: yes
+  with_items:
+      - { regexp: "^#?(map_fail_uri:).*", replace: "\\1 '/register'" }
+      - { regexp: "^#?(register_uri:).*", replace: "\\1 '/register'" }
+      - { regexp: "^#?(register_root:).*", replace: "\\1 '/var/www/ood/register'" }
 
 - name: Build the updated Apache config
   command: /opt/ood/ood-portal-generator/sbin/update_ood_portal
