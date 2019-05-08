@@ -19,6 +19,17 @@
     dest: /var/www/ood/public/OpenOnDemand_powered_by_RGB.svg
     remote_src: yes
 
+- name: Copy font awesome from Dashboard App
+  synchronize:
+    src: /var/www/ood/apps/sys/dashboard/public/assets/font-awesome
+    dest: /var/www/ood/public
+
+- name: Update path to font file in CSS file
+  replace:
+    path: /var/www/ood/public/application.css
+    regexp: pun/sys/dashboard/assets/font-awesome
+    replace: public/font-awesome
+
 - name: Put Cheaha logo in place
   copy:
     src: cheaha-logo.png
