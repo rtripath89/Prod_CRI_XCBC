@@ -20,10 +20,10 @@
     remote_src: yes
 
 - name: Copy font awesome from Dashboard App
-  copy:
+  file:
     src: /var/www/ood/apps/sys/dashboard/public/assets/font-awesome
     dest: /var/www/ood/public
-    remote_src: yes
+    state: link
 
 - name: Update path to font file in CSS file
   replace:
