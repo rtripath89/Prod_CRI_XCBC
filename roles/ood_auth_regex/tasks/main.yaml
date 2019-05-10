@@ -3,7 +3,7 @@
   replace:
     path: /etc/ood/config/ood_portal.yml
     regexp: "^#?(user_map_cmd:).*"
-    replace: "\\1 '/opt/ood/ood_auth_map/bin/uab_ood_auth.regex'"
+    replace: "\\1 \"/opt/ood/ood_auth_map/bin/uab_ood_auth.regex -r '^(.+)@uab.edu$'\""
     backup: yes
 
 - name: Stage regex file for ood
