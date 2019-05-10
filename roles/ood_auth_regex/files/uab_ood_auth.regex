@@ -43,8 +43,7 @@ class Regex < OodAuthMap
 
   define_run do |auth_user|
     user_check_ori = `getent passwd #{auth_user} | cut -d : -f 1`
-	user_check_low = `getent passwd #{auth_user.downcase} | cut -d : -f 1`
-    #puts user_check
+    user_check_low = `getent passwd #{auth_user.downcase} | cut -d : -f 1`
     if user_check_ori != "" || user_check_low != ""
       puts auth_user.downcase
     else
