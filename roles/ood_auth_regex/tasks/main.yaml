@@ -13,6 +13,7 @@
     owner: root
     group: root
     mode: 0755
+    backup: yes
 
 - name: Build the updated Apache config
   command: /opt/ood/ood-portal-generator/sbin/update_ood_portal
