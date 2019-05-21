@@ -5,7 +5,7 @@ require 'ood_auth_map'
 
 class Regex < OodAuthMap
   # Default regular expression to use when parsing authenticated username
-  DEFAULT_REGEX = "^(.+)$"
+  DEFAULT_REGEX = "^(.+)@uab(mc)?.edu$"
 
   # Body of option parser
   define_body do |parser|
@@ -42,10 +42,12 @@ class Regex < OodAuthMap
   end
 
   define_run do |auth_user|
-    user_check_ori = `getent passwd #{auth_user} | cut -d : -f 1`
-    user_check_low = `getent passwd #{auth_user.downcase} | cut -d : -f 1`
-    if user_check_ori != "" || user_check_low != ""
-      puts auth_user.downcase
+    sys_user = Helpers.parse_string(auth_user, /#{options[:regex]}/)
+    # downcase the result
+    sys_user = ( sys_user || auth_user ).downcase
+
+    if `getent passwd #{sys_user} | cut -d \' \' -f 1` != ""
+      puts sys_user
     else
       puts ""
       exit(false)
