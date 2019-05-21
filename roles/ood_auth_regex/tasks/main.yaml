@@ -27,3 +27,6 @@
   with_items:
     - { test_str: "louistw@uab.edu", expected: "louistw" }
     - { test_str: "LoUiStW@uab.edu", expected: "louistw" }
+    - { test_str: "FaKeAcCoUnT@uab.edu", expected: "" }
+    - { test_str: "rtripath89@gmail.com", expected: "rtripath89@gmail.com" }
+    - { test_str: "RTRipath89@gmail.com", expected: "rtripath89@gmail.com" }
