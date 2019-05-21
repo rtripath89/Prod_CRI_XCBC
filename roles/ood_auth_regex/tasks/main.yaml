@@ -17,3 +17,12 @@
 - name: Build the updated Apache config
   command: /opt/ood/ood-portal-generator/sbin/update_ood_portal
   ignore_errors: yes
+
+- name: Regex test cases
+  include_tasks: testing.yaml
+  vars:
+    test_str: "{{ item.test_str }}"
+    expected: "{{ item.expected }}"
+  with_items:
+    - { test_str: "louistw@uab.edu", expected: "louistw" }
+    - { test_str: "LoUiStW@uab.edu", expected: "louistw" }
