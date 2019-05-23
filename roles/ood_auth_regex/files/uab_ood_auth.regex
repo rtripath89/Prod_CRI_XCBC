@@ -5,7 +5,7 @@ require 'ood_auth_map'
 
 class Regex < OodAuthMap
   # Default regular expression to use when parsing authenticated username
-  DEFAULT_REGEX = "^(.+)@uab.edu$"
+  DEFAULT_REGEX = "([^!]+)@uab.edu$"
 
   # Body of option parser
   define_body do |parser|
