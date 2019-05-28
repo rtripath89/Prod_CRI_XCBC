@@ -3,11 +3,33 @@
   ignore_errors: yes
   register: css_file_name
 
+- shell: ls /var/www/ood/apps/sys/dashboard/public/assets/OpenOnDemand_powered_by_RGB*.svg
+  ignore_errors: yes
+  register: powered_by_img
+
 - name: Copy CSS file from Dashboard App
   copy:
     src: "{{ css_file_name.stdout }}"
     dest: /var/www/ood/public/application.css
     remote_src: yes
+
+- name: Copy powered by image from Dashboard App
+  copy:
+    src: "{{ powered_by_img.stdout }}"
+    dest: /var/www/ood/public/OpenOnDemand_powered_by_RGB.svg
+    remote_src: yes
+
+- name: Copy font awesome from Dashboard App
+  file:
+    src: /var/www/ood/apps/sys/dashboard/public/assets/font-awesome
+    dest: /var/www/ood/public/font-awesome
+    state: link
+
+- name: Update path to font file in CSS file
+  replace:
+    path: /var/www/ood/public/application.css
+    regexp: pun/sys/dashboard/assets/font-awesome
+    replace: public/font-awesome
 
 - name: Put Cheaha logo in place
   copy:
