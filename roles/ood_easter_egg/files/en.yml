@@ -2,7 +2,7 @@ en:
   dashboard:
     welcome_html: |
       <div style="position:relative;">
-        %{logo_img_tag}
+        <img alt="logo" height="85" style="margin-bottom: 10px" src="/public/logo.png">
         <a href="https://tinyurl.com/cheahaAL" target="_blank">
           <div style="float:left;position:absolute;display:block;left:245px;top:-6px;padding:10px 20px;"> </div>
         </a>
