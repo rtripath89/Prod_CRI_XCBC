@@ -42,7 +42,7 @@ class Regex < OodAuthMap
   end
 
   define_run do |auth_user|
-    sys_user = Helpers.parse_string(auth_user, /#{options[:regex]}/)
+    sys_user = Helpers.parse_string(auth_user, /#{options[:regex]}/i)
     # downcase the result
     sys_user = ( sys_user || auth_user.split("!")[-1] ).downcase
 
