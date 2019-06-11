@@ -24,6 +24,10 @@ cd "${HOME}"
 # Start MATLAB
 #
 
+<%- if context.bc_partition == "pascalnodes" -%>
+# Load CUDA toolkit
+module load <%= context.cuda_toolkit %>
+<%- end -%>
 # Load the required environment
 module load <%= context.version %>
 # Launch MATLAB

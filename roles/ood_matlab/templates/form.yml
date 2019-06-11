@@ -39,6 +39,8 @@ attributes:
       - [ "{{ ver }}", "{{ matlab_module_name }}/{{ ver }}"]
 {% endfor %}
 
+  cuda_toolkit: "{{ cuda_toolkit_module }}"
+
 form:
   - version
   - bc_num_hours
@@ -46,3 +48,4 @@ form:
   - bc_num_slots
   - bc_num_mems
   - bc_email_on_started
+  - cuda_toolkit
