@@ -39,7 +39,7 @@
   nvidia_driver_installer: "NVIDIA-Linux-x86_64-387.26.run"
   cuda_toolkit_installer: "cuda-linux.9.1.85-23083092.run"
   cuda_samples_installer: "cuda-samples.9.1.85-23083092-linux.run"
-
+  cuda_toolkit_module: "cuda10.0/toolkit"
 
 # WW Template Names for wwmkchroot
   template_path: "/usr/libexec/warewulf/wwmkchroot/"
@@ -129,6 +129,7 @@
   matlab_ver: "{{ matlab_module_file }}"
   matlab_module_name: "rc/matlab"
   matlab_vers:
+    - 'R2019a'
     - 'R2018a'
     - 'R2017b'
     - 'R2017a'
