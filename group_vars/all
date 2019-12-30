@@ -153,6 +153,8 @@
   rstudio_provision: true
   singularity_ver: '2.4.2'
   r_versions:
+    - { full: '3.6.2', short: '3.6' }
+    - { full: '3.6.0', short: '3.6' }
     - { full: '3.5.3', short: '3.5' }
     - { full: '3.5.2', short: '3.5' }
     - { full: '3.4.3', short: '3.4' }
