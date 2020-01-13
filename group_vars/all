@@ -152,6 +152,7 @@
 
 #ANSYS install related
   ansys_provision: false
+  ansys_group_name: "ANSYS_GROUP"
   ansys_module_name: "ANSYS"
   ansys_install_root: "{{ cluster_shared_folder }}/apps/{{ ansys_module_name }}"
   ansys_modulefiles_dir: "{{ cluster_shared_folder }}/modulefiles/{{ ansys_module_name }}"
