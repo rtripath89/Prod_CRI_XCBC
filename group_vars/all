@@ -190,6 +190,7 @@
 
 # Shibboleth SSO
   enable_shib: true
+  shib_config_files: PATH_TO_SHIB_CONFIG_TAR_FILE
 
 #UAB UI customize
   navbar_inverse_bg: "rgb(0,99,65)"
