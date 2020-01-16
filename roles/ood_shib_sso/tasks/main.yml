@@ -29,10 +29,17 @@
 # from client running web browser.  e.g. edit /etc/hosts to map to localhost
 # also requires ood to be accessible on port 8080 to match entityID
 # note testshib.dev.rc.uab.edu is not a real Hostname
-- name: load samltest.id shibboleth config
-  copy:
-    src: shibboleth2.xml
-    dest: /etc/shibboleth/shibboleth2.xml
+
+#- name: load samltest.id shibboleth config
+#  copy:
+#    src: shibboleth2.xml
+#    dest: /etc/shibboleth/shibboleth2.xml
+
+- name: Unpack shibboleth config
+  unarchive:
+    src: {{ shib_config_files }}
+    dest: /etc/shibboleth/
+    remote_src: yes
 
 - name: add saml-to-ood user map file
   copy:
