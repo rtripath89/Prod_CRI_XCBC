@@ -190,6 +190,7 @@
 
 # Shibboleth SSO
   enable_shib: true
+# Tar up following files in shib_config_file: shibboleth2.xml, uabgrid-incommon-key.pem, uabgrid-incommon-cert-2048-20yr.pem and inc-md-cert.pem
   shib_config_files: PATH_TO_SHIB_CONFIG_TAR_FILE
 
 #UAB UI customize
