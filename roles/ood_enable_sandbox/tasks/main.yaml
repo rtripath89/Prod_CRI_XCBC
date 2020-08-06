@@ -3,3 +3,4 @@
   copy:
     src: nginx_stage.yml
     dest: /etc/ood/config/nginx_stage.yml
+    backup: yes
