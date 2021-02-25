@@ -125,6 +125,7 @@
   matlab_destination: "/tmp/matlab.tar.gz"
   # module file vars
   matlab_install_root: "/opt/ohpc/pub-master/apps/matlab/M2/"
+  matlab_git_version: 0.7.0
   matlab_docs_url: "http://{{ ood_nodename }}"
   matlab_license_file: "{{ matlab_install_root }}/licenses/licenses.lic"
   matlab_module_path: "{{ easybuild_prefix }}/modules/all"
