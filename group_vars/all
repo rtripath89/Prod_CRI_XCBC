@@ -133,6 +133,7 @@
   matlab_ver: "{{ matlab_module_file }}"
   matlab_module_name: "rc/matlab"
   matlab_vers:
+    - 'R2020a'
     - 'R2019b'
     - 'R2019a'
     - 'R2018a'
@@ -162,6 +163,7 @@
   ansys_ood_app_dir: "{{ ood_sys_apps_dir }}/{{ ansys_module_name }}"
   ansys_ood_repo: "http://github.com/uabrc/ood_ansys.git"
   ansys_versions:
+    - "2020R2"
     - "2020R1"
 
 #IGV install related
@@ -172,6 +174,7 @@
   igv_ood_app_dir: "{{ ood_sys_apps_dir }}/{{ igv_module_name }}"
   igv_ood_repo: "https://github.com/uabrc/ood_igv.git"
   igv_versions:
+    - "2.9.1-Java-11"
     - "2.5.0-Java-11"
 
 #Rstudio related
