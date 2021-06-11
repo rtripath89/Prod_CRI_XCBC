@@ -46,6 +46,16 @@ class Regex < OodAuthMap
     # downcase the result
     sys_user = ( sys_user || Helpers.parse_string(auth_user, /uabgrid.uab.edu\/shibboleth!(.+)$/) || auth_user).downcase
 
+    # Add blocked users list
+    block_user_file = File.join(File.dirname(__FILE__), "block_users.txt")
+    if File.exists? (block_user_file)
+      block_users = File::readlines(block_user_file).map(&:chomp)
+      if block_users.include? sys_user
+        puts ""
+        exit(false)
+      end
+    end
+
     if `getent passwd #{sys_user} | cut -d \' \' -f 1` != ""
       puts sys_user
     else
