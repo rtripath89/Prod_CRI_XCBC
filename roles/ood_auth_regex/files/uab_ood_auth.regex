@@ -44,7 +44,7 @@ class Regex < OodAuthMap
   define_run do |auth_user|
     sys_user = Helpers.parse_string(auth_user, /#{options[:regex]}/i)
     # downcase the result
-    sys_user = ( sys_user || auth_user.split("!")[-1] ).downcase
+    sys_user = ( sys_user || Helpers.parse_string(auth_user, /uabgrid.uab.edu\/shibboleth!(.+)$/) || auth_user).downcase
 
     if `getent passwd #{sys_user} | cut -d \' \' -f 1` != ""
       puts sys_user
